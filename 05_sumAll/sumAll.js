@@ -1,7 +1,11 @@
 const sumAll = function (initialNum, finalNumber) {
   let sum = 0;
 
-  if ((initialNum < 0 || finalNumber < 0) || (!Number.isInteger(initialNum) || !Number.isInteger(finalNumber)) || (isNaN(initialNum) || isNaN(finalNumber))) {
+  let numIsNegative = (initialNum < 0 || finalNumber < 0);
+  let numIsNotAnInteger = (!Number.isInteger(initialNum) || !Number.isInteger(finalNumber));
+  let numIsNaN = (isNaN(initialNum) || isNaN(finalNumber));
+
+  if (numIsNegative || numIsNotAnInteger || numIsNaN) {
     return "ERROR";
   }
 
